@@ -1,0 +1,20 @@
+RewriteEngine On
+
+# secure htaccess file
+    <files .htaccess>
+        order allow,deny
+        deny from all
+    </files>
+    <FilesMatch "\.(htaccess|htpasswd)$">
+        Order Allow,Deny
+        Deny from all
+    </FilesMatch>
+
+# .php to extension less
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(([^/]+/)*[^.]+)$ $1.php [L]
+RewriteCond %{THE_REQUEST} ^[A-Z]+\ /([^/]+/)*[^.#?\ ]+\.php([#?][^\ ]*)?\ HTTP/
+RewriteRule ^(([^/]+/)*[^.]+)\.php http://www.localhost/$1 [R=301,L]
+
+
+RewriteRule ^film/([0-9]+) film?id=$1
