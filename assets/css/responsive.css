@@ -1,0 +1,130 @@
+/** @format */
+
+@media only screen and (min-width: 321px) {
+  .responsiveContainer {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 481px) {
+  .responsiveContainer {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .responsiveContainer {
+    max-width: 1232px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .responsiveContainer {
+    max-width: 1232px;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .responsiveContainer {
+    max-width: 1232px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .topInnerHeader {
+    height: 81px;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .topInnerHeader {
+    padding: 0px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .topInnerHeader
+    .HeaderNavigation-sectionLeft
+    .HeaderNavigation-sectionLeft-mobile {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .topInnerHeader
+    .HeaderNavigation-sectionMiddle
+    .HeaderNavigation-sectionMiddle-mobile {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .topInnerHeader
+    .HeaderNavigation-sectionMiddle
+    .HeaderNavigation-sectionMiddle-desktop {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 420px) {
+  .logo-Container {
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .sectionRight .sectionRight-container .sectionRight-link {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .navBar {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .navBar-inner {
+    padding: 0px;
+  }
+}
+
+/* Footer */
+@media only screen and (min-width: 481px) {
+  body:not(.responsive-search-page) .footer-responsive {
+    columns: auto 1;
+    line-height: 30px;
+  }
+}
+
+@media only screen and (min-width: 481px) {
+  body:not(.responsive-search-page) .footer-responsive li {
+    margin: 0px 10px;
+    display: inline-block;
+    padding-top: 0px;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 481px) {
+  .downloads li:first-child {
+    display: inline-block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .billboard-content {
+    padding: 0px 33px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .billboard-subtitle {
+    max-width: 100%;
+  }
+}
