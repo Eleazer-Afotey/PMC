@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMC</title>
+    <link rel="stylesheet" href="css/style.css">
+   <style>.btn,.caret,.input-group-btn,img{vertical-align:middle}@font-face{font-family:"Muli Regular";font-display:swap;src:url(/Content/fonts/Muli-Regular.eot);src:url(/Content/fonts/Muli-Regular.eot?#iefix) format('embedded-opentype'),url(/Content/fonts/Muli-Regular.woff) format('woff')}@font-face{font-family:FontAwesome;font-display:swap;src:url(/Content/fonts/font-awesome--subset.eot);src:url(/Content/fonts/font-awesome--subset.eot?#iefix) format('embedded-opentype'),url(/Content/fonts/font-awesome--subset.woff) format('woff')}html{font-family:'Muli Regular',"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif,sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}nav,section{display:block}a{background-color:transparent;color:#019fc1;text-decoration:none}img{border:0}button,input{color:inherit;font:inherit;margin:0}.btn,.dropdown-menu>li>a{font-weight:400;white-space:nowrap}button{overflow:visible;text-transform:none;-webkit-appearance:button}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px}body{margin:0;font-family:'Muli Regular',"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#f4f4f4}button,input{font-family:inherit;font-size:inherit;line-height:inherit}.btn,.form-control{padding:6px 12px;line-height:1.42857143;background-image:none}h1{margin:.67em 0;font-size:36px}h2{font-size:30px}p{margin:0 0 10px}.display-none{display:none}.form-control{display:block;width:100%;height:34px;font-size:14px;color:#555;background-color:#fff;border:1px solid #e3e3e3;border-radius:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.btn,.navbar{border:1px solid transparent}.form-control::-moz-placeholder{color:#999;opacity:1}.form-control:-ms-input-placeholder{color:#999}.form-control::-webkit-input-placeholder{color:#999}.btn{display:inline-block;margin-bottom:0;text-align:center;touch-action:manipulation;font-size:14px;border-radius:0}.btn-lg,.input-group .form-control:not(:first-child):not(:last-child){border-radius:0}.btn-primary{color:#fff;border-color:#7bb943}.home-section-intro h2,.navbar-default .navbar-nav>li>a{color:#777}.btn-lg{padding:10px 16px;font-size:18px;line-height:1.33}.collapse{display:none;visibility:hidden}.input-group{position:relative;display:table;border-collapse:separate}.input-group .form-control{position:relative;z-index:2;float:left;width:100%;margin-bottom:0}.input-group .form-control,.input-group-btn{display:table-cell}.nav>li,.nav>li>a{display:block;position:relative}.input-group-btn{width:1%;position:relative;font-size:0;white-space:nowrap}.input-group-btn:last-child>.btn{border-bottom-left-radius:0;border-top-left-radius:0;margin-left:-1px}.input-group-btn>.btn{position:relative}.nav{margin-bottom:0;padding-left:0;list-style:none}.nav>li>a{padding:10px 15px}.navbar{position:relative;min-height:70px;margin-bottom:20px}.navbar-collapse{overflow-x:visible;padding-right:15px;padding-left:15px;border-top:1px solid transparent;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);-webkit-overflow-scrolling:touch}@media (min-width:768px){.navbar{border-radius:0}.navbar-header{float:left}.navbar-collapse{width:auto;border-top:0;box-shadow:none}.navbar-collapse.collapse{display:block!important;visibility:visible!important;height:auto!important;padding-bottom:0;overflow:visible!important}.navbar-toggler{display:none}}.navbar-toggler{position:relative;float:right;margin-right:15px;padding:9px 10px;margin-top:18px;margin-bottom:18px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:0}.dropdown-menu,.navbar-default{background-color:#fff}.navbar-default,.navbar-default .navbar-collapse{border-color:#e3e3e3}.navbar-nav{margin:12.5px -15px}.navbar-nav>li>a{padding-top:10px;padding-bottom:10px;line-height:20px}@media (min-width:768px){.navbar-nav{float:left;margin:0}.navbar-nav>li{float:left}.navbar-nav>li>a{padding-top:25px;padding-bottom:25px}.navbar-right{float:right!important;margin-right:-15px}}.caret{display:inline-block;width:0;height:0;margin-left:2px;border-top:4px solid;border-right:4px solid transparent;border-left:4px solid transparent}.dropdown{position:relative}.dropdown-menu{position:absolute;top:100%;left:0;z-index:10000;display:none;float:left;min-width:160px;padding:5px 0;margin:2px 0 0;list-style:none;font-size:14px;text-align:left;border:1px solid #ccc;border:1px solid rgba(0,0,0,.15);border-radius:0;-webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);box-shadow:0 6px 12px rgba(0,0,0,.175);background-clip:padding-box}.dropdown-menu>li>a{display:block;padding:3px 20px;clear:both;line-height:1.42857143;color:#333}.container-fluid:after,.container-fluid:before,.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.navbar-header:after,.navbar-header:before,.navbar:after,.navbar:before{content:" ";display:table}.container-fluid:after,.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after{clear:both}.container-fluid{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px;max-width:1200px}.carousel-control{position:absolute;top:0;left:0;bottom:0;width:15%;opacity:.5;filter:alpha(opacity=50);font-size:20px;color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.6)}.carousel-control.left{background-image:-webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-image:-o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-image:linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1)}.carousel-control.right{left:auto;right:0;background-image:-webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-image:-o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-image:linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1)}.carousel-control .icon-chevron-left,.carousel-control .icon-chevron-right{position:absolute;top:50%;margin-top:-10px;z-index:5;display:inline-block}.carousel-control .icon-chevron-left{left:50%;margin-left:-10px}.carousel-control .icon-chevron-right{right:50%;margin-right:-10px}@media screen and (min-width:768px){.carousel-control .icon-chevron-left,.carousel-control .icon-chevron-right{width:30px;height:30px;margin-top:-15px;font-size:30px}.carousel-control .icon-chevron-left{margin-left:-15px}.carousel-control .icon-chevron-right{margin-right:-15px}}.carousel-control.left,.carousel-control.right{background:0 0}:root{font-size:14px}@media (min-width:768px){body,html{height:100%}}.field-validation-valid{display:none}.navbar-default{background:#fff;padding:0;margin:0;border-width:0 0 1px;position:sticky;top:0;z-index:9999;min-height:60px}.navigation button{border:none;background:0 0;display:block;padding:5px 30px}.navigation ul{padding:0;margin:0}.navigation .navbar-nav li{vertical-align:top;list-style:none}.navigation .navbar-nav li a{color:#444;display:block;padding:10px;line-height:1em;margin:0;font-weight:500}.navigation .navbar-nav li a:after{content:'';display:block;width:0;height:1px;background:#000}.navigation .navbar-nav li:last-child a{padding-right:10px}.navigation .navbar-nav>li>a{padding:10px 12px;text-transform:none}.navigation li:first-child>a{font-weight:500}.navbar-header .logo{width:152px;height:44px;margin-left:15px;padding-top:10px;display:block}.navbar-header .logo img{margin-top:4%;max-width:100%}.home-menu-dropdown .dropdown-menu.navbar-right{right:0;left:auto}.home-menu-dropdown button.btn.dropdown-toggle{display:none}@media (max-width:767px){.navigation.collapse #secondary .dropdown-menu{display:block;position:unset;background-color:unset;max-height:unset}.navbar-collapse{background:#fff;position:absolute;width:100%;z-index:103}.navbar-nav{margin-top:0;margin-bottom:0}.navbar-nav li a{padding-top:12px;padding-bottom:12px;text-align:left}.navigation{padding:0}.navigation>div{flex-direction:column;display:-webkit-flex;-webkit-flex-direction:column}.navigation .dropdown-menu{position:relative;float:none;border:none;box-shadow:none;max-height:0;overflow:hidden;display:block}.navigation .navbar-nav li a{padding:20px 15px;display:block;width:100%;text-align:left;font-size:15px;line-height:20px}.navigation .dropdown-menu,.navigation .navbar-nav li a{border-bottom:1px solid #eee;border-bottom:none}}@media (min-width:480px){.navbar-default{position:relative}}@media (min-width:768px){.navbar-header,.navigation #secondary .dropdown-toggle{min-width:160px}.navbar-default .navbar-header .logo{width:190px;height:90px;display:block;padding-top:15%}.home-menu-dropdown button.btn.dropdown-toggle{display:block;box-shadow:none}.navigation li a{margin-left:6px;padding:15px 10px}.navbar-default{min-height:90px;display:table;width:100%;background:#fff;border-bottom:1px solid #ddd;padding:0 5px 0 15px}#navigation,.navbar-header{display:table-cell!important}.navigation{width:100%;direction:rtl;text-align:right;vertical-align:bottom;padding:0 0 0 15px}.navigation>div{line-height:1px;padding:0;text-align:justify;width:100%;margin:0 0 14px}.navigation>div:after{content:"";display:inline-block;font-size:0;height:0;line-height:0;margin:0;padding:0;width:100%}.navigation .dropdown-menu{border:none}.navigation #secondary{display:inline-block;text-align:right;direction:ltr;margin:0 10px;vertical-align:bottom}.navigation #secondary .dropdown{border:1px solid #606062;border-radius:12px;margin:0 15px 5px 0}}@media (min-width:768px) and (max-width:1024px){#navigation,#navigation #secondary{margin:0;padding:0}#navigation #secondary .home-menu-dropdown{margin:0 0 5px;padding:0}#navigation #secondary .home-menu-dropdown .dropdown-toggle{min-width:100px}}.navbar-default .navbar-toggler{padding:8px 11px;border:1px solid #606062;border-radius:12px;margin:10px 15px 5px 0}@media (max-width:767px){.navbar-collapse{background:#fff;position:absolute;width:100%;z-index:103}body .navbar-default .navbar-collapse{border:1px solid #606062;border-radius:12px;margin:-6px 15px 5px 1%;width:98%}.navigation{padding:0}.navigation .navbar-nav li a{padding:20px 15px;display:block;width:100%;text-align:left;font-size:15px;line-height:20px}.navigation .dropdown-menu,.navigation .navbar-nav li a{border-bottom:1px solid #eee;border-bottom:none}}.home-hero,.home-section-intro{text-align:center}.home-hero{background-image:url(https://cdngeneral.rentcafe.com/dmslivecafe/ils/Content/marketing/rcils-bg-images/home/400/rentcafe.png);background-color:#00609c;background-attachment:scroll;width:100%;position:relative;z-index:1;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}@media (min-width:481px){.home-hero{background-image:url(https://cdngeneral.rentcafe.com/dmslivecafe/ils/Content/marketing/rcils-bg-images/home/800/rentcafe.png)}.home-hero .home-main{max-height:540px;display:inline-block;top:100px;width:75%;max-width:700px;min-width:300px}}@media (min-width:801px){.home-hero{background-image:url(https://cdngeneral.rentcafe.com/dmslivecafe/ils/Content/marketing/rcils-bg-images/home/1400/rentcafe.png)}}@media (min-width:1200px){.home-hero{background-image:url(https://cdngeneral.rentcafe.com/dmslivecafe/ils/Content/marketing/rcils-bg-images/home/rentcafe.png)}}.home-main{display:inline-block;top:100px;width:75%;max-width:720px;min-width:300px;padding:4% 0 5%}.home-main h1{color:#333;white-space:nowrap;font-weight:100;padding-bottom:5%;font-size:30px;font-family:'Segoe UI','Muli Regular',"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif}.home-main .input-group{padding:10px}.home-main .input-group input{height:60px;border:none;webkit-box-shadow:1px 2px 2px 0 rgba(0,0,0,.08);-moz-box-shadow:1px 2px 2px 0 rgba(0,0,0,.08);box-shadow:1px 2px 2px 0 rgba(0,0,0,.08);border-radius:0;padding:10px!important;z-index:10}.home-main .input-group input::-webkit-input-placeholder{text-transform:uppercase}.home-main .input-group input::-moz-placeholder{text-transform:uppercase}.home-main .input-group input:-ms-input-placeholder{text-transform:uppercase}.home-main .input-group input:-moz-placeholder{text-transform:uppercase}.home-main .input-group button{line-height:1;padding:14px 12px;text-transform:uppercase;font-size:16px;z-index:2;font-weight:600;height:60px;border-radius:0}.home-main .input-group .input-group-btn{left:1px}.home-main .input-group .input-group-btn .btn.btn-primary{background-color:#88c155;border:none}.home-main .input-group .input-group-btn .search{display:block}.home-main .input-group .input-group-btn .search:before{content:"";background:url(/Content/images/home-icons.png) -205px -10px;position:absolute;width:56px;height:56px;-webkit-transform:scale(.5);-ms-transform:scale(.5);-o-transform:scale(.5);transform:scale(.5);top:5px;left:5px}@media (min-width:480px){.home-main h1{font-size:42px}}@media (min-width:768px){.home-main{padding:4% 0 6%}.home-main h1{font-size:60px;margin:0;padding-bottom:15%}}@media (min-width:1024px){.home-main{padding:4% 0 12%}.home-main h1{font-size:80px}.home-main .input-group button,.home-main .input-group input{height:70px}.home-main .input-group .input-group-btn .search{width:5em}.home-main .input-group .input-group-btn .search:before{top:10px;left:30px;-webkit-transform:scale(.9);-ms-transform:scale(.9);-o-transform:scale(.9);transform:scale(.9)}}@media only screen and (max-device-height:812px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape){.home-main h1{padding-bottom:5%}}.home-section{background-color:#fff}.btn-primary{background-color:#8DC442}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.home-section-header{display:flex;align-items:center;justify-content:center}}.home-section-intro .verified-listings{text-align:left}.home-section-intro .verified-listings p{margin:0 0 1.8em;line-height:1.6em;word-break:break-word}.home-section-intro .verified-listings h2{font-size:20px;padding-top:10px;text-align:left;padding-left:50px;font-weight:100}.home-section-intro .verified-listings h2:before{content:"";background:url(/Content/images/home-icons.png) -10px -172px;position:absolute;width:57px;height:55px;margin-left:-60px;margin-top:-15px;transform:scale(.8)}.home-section-intro span.toggle-section-intro{width:30px;height:30px;display:inline-block;border-radius:50%;box-shadow:1px 4px 10px rgba(0,0,0,.3);margin:10px}.home-section-intro span.toggle-section-intro.active{background-color:rgba(0,0,0,.09)}.home-section-top-banners{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row;background:#fff}.home-section-top-banners-content{overflow:hidden}.home-section-top-banners-content h2{display:-webkit-inline-box;display:-moz-inline-box;display:-ms-inline-flexbox;display:inline-flex;padding:0;margin:0;letter-spacing:0;text-align:left}.home-section-top-banners-content h2:before{display:block;content:"";background-repeat:no-repeat;height:64px;margin:5px 10px 0 0}.home-section-top-banners-content a.btn{max-width:95%;width:250px;padding:10px 20px;white-space:normal;margin:30px auto auto;font-size:16px;box-shadow:0 3px 6px rgba(0,0,0,.16)}.home-section-directory .carousel-directory-type .carousel-control i,.home-section-storage .carousel-top-cities-storage .carousel-control i,.home-section-top-cities .carousel-top-cities .carousel-control i{font-size:50px;line-height:60px;margin-top:-40px;color:#fff;text-shadow:0 0 1px #000,0 0 3px rgba(0,0,0,.6),0 0 5px rgba(0,0,0,.4)}.home-section-top-banners-content .background-images-lazy{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;-webkit-align-items:center;-webkit-box-align:center;align-items:center;background-repeat:no-repeat;background-attachment:scroll;position:relative;z-index:1;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:100% 100%;overflow:hidden;padding:30px 0}.home-section-storage .carousel-top-cities-storage .carousel-control,.home-section-top-cities .carousel-top-cities .carousel-control{border:1px solid #e8e8e8;border-width:0;width:0}.home-section-directory .carousel-directory-type .carousel-control{border:1px solid #e8e8e8;border-width:0;width:0}@media (min-width:480px){.home-section-header{padding-bottom:30px}.home-section-intro .verified-listings h2{text-align:center}}@media (min-width:768px){section.home-section{padding-top:30px}.home-section-intro .verified-listings,.home-section-storage p{text-align:center}.home-section-intro .verified-listings h2{font-size:30px}.home-section-intro .verified-listings h2:before{margin-top:-10px;margin-left:-70px;transform:scale(1)}.home-section-intro .verified-listings p{font-size:20px}.home-section-intro .container-toggle-section-intro{display:none}.home-section-directory .carousel-directory-type .carousel-control,.home-section-storage .carousel-top-cities-storage .carousel-control,.home-section-top-cities .carousel-top-cities .carousel-control{display:none!important}}.fa-icon,[class*=" icon-"]{position:relative;display:inline-block;font-family:FontAwesome;font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-chevron-left:before{content:"\f053"}.icon-chevron-right:before{content:"\f054"}[class*=" icon-"]:before{text-decoration:inherit;display:inline-block;speak:none}[class*=" icon-"]{display:inline;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0 0;background-repeat:repeat;margin-top:0}#rcils-mq-listener{-webkit-transition:width 1ms;-moz-transition:width 1ms;-ms-transition:width 1ms;-o-transition:width 1ms;transition:width 1ms;position:absolute;bottom:1px;right:0;width:4px}#rcils-mq-listener:after{content:full;display:block;position:absolute;height:1px;width:1px;overflow:hidden}@media all and (max-width:1199px){#rcils-mq-listener{width:3px}#rcils-mq-listener:after{content:'standard'}}@media all and (max-width:1023px){#rcils-mq-listener{width:2px}#rcils-mq-listener:after{content:'medium'}}@media all and (max-width:767px){#rcils-mq-listener{width:1px}#rcils-mq-listener:after{content:'base'}}#psrk-mq-listener{width:1px!important}#psrk-mq-listener:after{content:""!important}</style>
+
+    
+    <style>
+        .home-hero {
+            background-image: url("https://cdngeneral.rentcafe.com//dmslivecafe/ils/Content/marketing/rcils-bg-images/home/400/rentcafe.png");
+        }
+
+        @media (min-width: 481px) {
+            .home-hero {
+                background-image: url("https://cdngeneral.rentcafe.com//dmslivecafe/ils/Content/marketing/rcils-bg-images/home/800/rentcafe.png");
+            }
+        }
+
+        @media (min-width: 801px) {
+            .home-hero {
+                background-image: url("https://cdngeneral.rentcafe.com//dmslivecafe/ils/Content/marketing/rcils-bg-images/home/1400/rentcafe.png");
+            }
+        }
+        @media (min-width: 1200px) {
+            .home-hero {
+                background-image: url("https://cdngeneral.rentcafe.com//dmslivecafe/ils/Content/marketing/rcils-bg-images/home/rentcafe.png");
+            }
+        }
+    </style>
+       <style>
+        .async-hide {
+            opacity: 0 !important
+        }
+    </style>
+</head>
+
+<body role="document">
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W5C447" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager -->
+
+    
+
+    
+
+
+<nav id="masthead" class="navbar navbar-default" role="banner">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navigation">
+                <span>Login</span>
+        </button>
+
+            <a href="https://www.rentcafe.com/" title="Apartments for rent – RentCafe" class="logo">
+                <img alt="Apartments for rent &#x2013; RentCafe" src="https://cdngeneral.rentcafe.com/Content/images/rc-logo-grey.png" srcset="https://cdngeneral.rentcafe.com/Content/images/rc-logo-grey.png 1x, https://cdngeneral.rentcafe.com/Content/images/rc-logo-grey-2x.png 2x" />
+            </a>
+
+    </div>
+
+    <div class="navigation collapse navbar-collapse" id="navigation" role="navigation">
+        <div>
+            <div id="secondary">
+                
+
+<div class="dropdown home-menu-dropdown">
+    <a class="nav-link btn dropdown-toggle" type="button" id="dropdownMenuLogin" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+        <span id="username-container">
+            Login
+        </span>
+        <span class="caret"></span>
+    </a>
+    <ul class="nav navbar-nav navbar-right dropdown-menu" id="login-links" role="menu" aria-labelledby="dropdownMenuLogin">
+            <li role="presentation"><a role="menuitem" id="GuestLoginLink" rel="nofollow" href="https://www.rentcafe.com/onlineleasing/apartmentsforrent/guestlogin.aspx?ReturnUrl=http%3a%2f%2fwww.rentcafe.com%2f%3ft%3d637886695560554652" target="_self">Guest Login</a></li>
+            <li role="presentation"><a role="menuitem" id="ResidentLoginLink" rel="nofollow" href="https://www.rentcafe.com/residentservices/apartmentsforrent/userlogin.aspx" target="_blank">Resident Login</a></li>
+            <li role="presentation"><a role="menuitem" id="ManagerLoginLink" rel="nofollow" href="https://sitemanager.rentcafe.com/sitemanager/login.aspx" target="_blank">Manager Login</a></li>
+    </ul>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+</nav><div class="home-hero">
+    <div class="home-main">
+        <h1>Putting control in your hands</h1>
+<form action="/" id="searchForm" method="post" name="searchForm" onsubmit="RCILS.homepage.SearchBegin();">            <div class="input-group">
+
+                <input id="DirectoryType" name="DirectoryType" type="hidden" value="" />
+                <input id="CountryCode" name="CountryCode" type="hidden" value="US" />
+                <input id="BackgroundImage" name="BackgroundImage" type="hidden" value="" />
+                <input id="MarketingContentView" name="MarketingContentView" type="hidden" value="_HomeContentUS" />
+                <input aria-expanded="false" aria-label="Search by City, State or Zip Code" autocorrect="off" class="form-control" data-val="true" data-val-regex="The Location field is required." data-val-regex-pattern="^(?!\s*$).&#x2B;" data-val-required="The Location field is required." id="Location" name="Location" placeholder="Enter a location, apartment type (studio, pet-friendly...)" role="combobox" tabindex="0" title="Location input field" type="text" value="" />
+                <input id="LocationGeoId" name="LocationGeoId" type="hidden" value="" />
+                <input id="LocationSeoUrl" name="LocationSeoUrl" type="hidden" value="" />
+                <input id="PropertyName" name="PropertyName" type="hidden" value="" />
+
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit" aria-label="Search"><span aria-hidden="true" class="search"></span><span class="txt"></span></button>
+                </span>
+            </div>
+<span class="field-validation-valid" data-valmsg-for="Location" data-valmsg-replace="true"></span><span class="field-validation-valid" data-valmsg-for="EmptyFieldError" data-valmsg-replace="true"></span><input name="__RequestVerificationToken" type="hidden" value="CfDJ8I9NYKRYHhtCrtBxvOevf2ecOQqfo6A4VRW66Ov6S0dxtcieJrg3qu9HOuIXW4gmpzFBJmUgwp2tacUXNPI81NKonDgzsFJJjGqRSkkDpUwKhqlMXBsE2ZDXtbneneUmhBaCLhOUUWljz8zcokBDM5Y" /></form>    </div>
+</div>
+
+
+<section class="home-section home-section-intro">
+        <section class="home-section-top-cities padding-bottom" style="max-width:1200px; width: 100%; margin-left: auto; margin-right:auto; position: relative;">
+            
+<h2>Find rental properties near you</h2>
+<div id="nearbyListingsAccordionDetails">
+    <div class="compare-listings d-flex-home flex-nowrap" style="justify-content: center">
+<div class="compare-listing" data-pid="602064">
+                <div class="property-details">
+                    <div class="item-presentation listing-type-standard">
+                        <a role="button" class="btn btn-primary-results" target="_blank" href="https://www.rentcafe.com/apartments/wa/bellevue/cross-creek-2/default.aspx">
+                            <img src="https://cdngeneral.rentcafe.com/dmslivecafe/2/58193/SG-4879web.jpg?width=380"
+                                 alt="outside of clubhouse"
+                                 title=""
+                                 data-listing-url="https://www.rentcafe.com/apartments/wa/bellevue/cross-creek-2/default.aspx" />
+                        </a>
+                        <div class="listing-information">
+
+<div class="listing-rating-update-compare">
+        <span role="img" aria-label=" 3.00 out of 5 stars rating" class="rating-stars" style="--rating: 3.00;" data-starRating="3.00"></span>
+        <span class="availability last-updated rcils-icon-before rcils-icon-updated-before home-page-hide">Today</span>
+        <label for="HasCompare_602064" class="compare-checkbox-label-group compare-checkbox-label map-hide market-trends-hide home-page-hide">
+            Compare
+            <input type="checkbox" id="HasCompare_602064" class="compare-option-checkbox" name="HasCompare" data-submit="true" value="true" />
+        </label>
+</div>
+<div class="listing-name-address">
+        <h2 title="Cross Creek" class="listing-name building-name" itemprop="name" data-property-sname="cross-creek-2">
+            <a itemprop="url" href="https://www.rentcafe.com/apartments/wa/bellevue/cross-creek-2/default.aspx" >Cross Creek</a>
+        </h2>
+        <span title="4160 124Th Ave SE" class="listing-address building-address" itemtype="http://schema.org/PostalAddress" itemscope="" itemprop="address">
+<span itemprop='streetAddress'>4160 124Th Ave SE</span>, <span itemprop='addressLocality'>Bellevue</span>, <span itemprop='addressRegion'>WA</span> <span itemprop='postalCode'>98006</span>        </span>
+</div>
+<div class="listing-available-verified">
+        <span class="listing-availability available-today rcils-icon-before rcils-icon-verified-before">3 Units available</span>
+    <span class="verified-listing-container">
+            <button id="VerifiedListing-602064" class="btn available-today verified-listing rcils-icon-before rcils-icon-verified-before" verified-listing-message="This listing is provided by &lt;b&gt;Pinnacle&lt;/b&gt;, a reputable property management company with verified listings on RentCafe.">Verified</button>
+    </span>
+</div>
+
+<ul class="listing-beds" data-beds-range="2-3 Beds">
+            <li class="data-beds">2 BEDS</li>
+            <li class="data-beds">3 BEDS</li>
+
+</ul>
+
+    <ul class="listing-beds-rent" data-price-range="$2,250 - $3,000">
+            <li class="data-rent ">$2,250&#x2B;</li>
+            <li class="data-rent ">$2,880&#x2B;</li>
+    </ul>
+<div class="listing-action-bar">
+    <button class="btn ole btn-primary btn-listing-action btn-listing-action-details market-trends-hide home-page-hide" arial-label="Apply">
+        <span class="fa-icon icon-pencil" aria-hidden="true"></span> View Details
+    </button>
+    <a class="btn ole btn-primary btn-listing-action btn-listing-action-details search-page-hide map-hide home-page-hide" href="https://www.rentcafe.com/apartments/wa/bellevue/cross-creek-2/default.aspx" arial-label="Apply">
+        <span class="fa-icon icon-pencil" aria-hidden="true"></span> View Property
+    </a>
+        <button id="search-list-602064" class="btn contact btn-primary green transparent btn-listing-action market-trends-hide home-page-hide" aria-label="Contact" data-target="#contact-us-modal" onclick="RCILS.contactProp.show(this, '602064','Cross Creek')">
+            Contact <span class="optional">Property</span>
+        </button>
+</div>
+<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+    <meta itemprop="latitude" content="47.5714" />
+    <meta itemprop="longitude" content="-122.1740" />
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="compare-listing" data-pid="602065">
+                <div class="property-details">
+                    <div class="item-presentation listing-type-standard">
+                        <a role="button" class="btn btn-primary-results" target="_blank" href="https://www.rentcafe.com/apartments/wa/bellevue/sequoia-grove/default.aspx">
+                            <img src="https://cdngeneral.rentcafe.com/dmslivecafe/2/58193/SG-4854web.jpg?width=380"
+                                 alt="monument sign for community"
+                                 title=""
+                                 data-listing-url="https://www.rentcafe.com/apartments/wa/bellevue/sequoia-grove/default.aspx" />
+                        </a>
+                        <div class="listing-information">
+
+<div class="listing-rating-update-compare">
+        <span class="availability last-updated rcils-icon-before rcils-icon-updated-before home-page-hide">Today</span>
+        <label for="HasCompare_602065" class="compare-checkbox-label-group compare-checkbox-label map-hide market-trends-hide home-page-hide">
+            Compare
+            <input type="checkbox" id="HasCompare_602065" class="compare-option-checkbox" name="HasCompare" data-submit="true" value="true" />
+        </label>
+</div>
+<div class="listing-name-address">
+        <h2 title="Sequoia Grove" class="listing-name building-name" itemprop="name" data-property-sname="sequoia-grove">
+            <a itemprop="url" href="https://www.rentcafe.com/apartments/wa/bellevue/sequoia-grove/default.aspx" >Sequoia Grove</a>
+        </h2>
+        <span title="13001 SE 28Th Pl" class="listing-address building-address" itemtype="http://schema.org/PostalAddress" itemscope="" itemprop="address">
+<span itemprop='streetAddress'>13001 SE 28Th Pl</span>, <span itemprop='addressLocality'>Bellevue</span>, <span itemprop='addressRegion'>WA</span> <span itemprop='postalCode'>98005</span>        </span>
+</div>
+<div class="listing-available-verified">
+        <span class="listing-availability available-today rcils-icon-before rcils-icon-verified-before">1 Unit available</span>
+    <span class="verified-listing-container">
+            <button id="VerifiedListing-602065" class="btn available-today verified-listing rcils-icon-before rcils-icon-verified-before" verified-listing-message="This listing is provided by &lt;b&gt;Pinnacle&lt;/b&gt;, a reputable property management company with verified listings on RentCafe.">Verified</button>
+    </span>
+</div>
+
+<ul class="listing-beds" data-beds-range="1-2 Beds">
+            <li class="data-beds">1 BED</li>
+            <li class="data-beds">2 BEDS</li>
+
+</ul>
+
+    <ul class="listing-beds-rent" data-price-range="$1,850 - $2,050">
+            <li class="data-rent ">$1,850&#x2B;</li>
+            <li class="data-rent data-rent-ask">Ask for pricing</li>
+    </ul>
+<div class="listing-action-bar">
+    <button class="btn ole btn-primary btn-listing-action btn-listing-action-details market-trends-hide home-page-hide" arial-label="Apply">
+        <span class="fa-icon icon-pencil" aria-hidden="true"></span> View Details
+    </button>
+    <a class="btn ole btn-primary btn-listing-action btn-listing-action-details search-page-hide map-hide home-page-hide" href="https://www.rentcafe.com/apartments/wa/bellevue/sequoia-grove/default.aspx" arial-label="Apply">
+        <span class="fa-icon icon-pencil" aria-hidden="true"></span> View Property
+    </a>
+        <button id="search-list-602065" class="btn contact btn-primary green transparent btn-listing-action market-trends-hide home-page-hide" aria-label="Contact" data-target="#contact-us-modal" onclick="RCILS.contactProp.show(this, '602065','Sequoia Grove')">
+            Contact <span class="optional">Property</span>
+        </button>
+</div>
+<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+    <meta itemprop="latitude" content="47.5847" />
+    <meta itemprop="longitude" content="-122.1663" />
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="compare-listing" data-pid="1431934">
+                <div class="property-details">
+                    <div class="item-presentation listing-type-standard">
+                        <a role="button" class="btn btn-primary-results" target="_blank" href="https://www.rentcafe.com/apartments/wa/bellevue/the-ridgedale0/default.aspx">
+                            <img src="https://cdngeneral.rentcafe.com/dmslivecafe/2/92891/ridgedale%20sl_brandi%20jones%20-%200045.jpg?width=380"
+                                 alt="The Ridgedale Apartments Model Living Room"
+                                 title=""
+                                 data-listing-url="https://www.rentcafe.com/apartments/wa/bellevue/the-ridgedale0/default.aspx" />
+                        </a>
+                        <div class="listing-information">
+
+<div class="listing-rating-update-compare">
+        <span class="availability last-updated rcils-icon-before rcils-icon-updated-before home-page-hide">Today</span>
+        <label for="HasCompare_1431934" class="compare-checkbox-label-group compare-checkbox-label map-hide market-trends-hide home-page-hide">
+            Compare
+            <input type="checkbox" id="HasCompare_1431934" class="compare-option-checkbox" name="HasCompare" data-submit="true" value="true" />
+        </label>
+</div>
+<div class="listing-name-address">
+        <h2 title="The Ridgedale" class="listing-name building-name" itemprop="name" data-property-sname="the-ridgedale0">
+            <a itemprop="url" href="https://www.rentcafe.com/apartments/wa/bellevue/the-ridgedale0/default.aspx" >The Ridgedale</a>
+        </h2>
+        <span title="14111 SE 6Th Street" class="listing-address building-address" itemtype="http://schema.org/PostalAddress" itemscope="" itemprop="address">
+<span itemprop='streetAddress'>14111 SE 6Th Street</span>, <span itemprop='addressLocality'>Bellevue</span>, <span itemprop='addressRegion'>WA</span> <span itemprop='postalCode'>98007</span>        </span>
+</div>
+<div class="listing-available-verified">
+        <span class="listing-availability not-available-today rcils-icon-before rcils-icon-clock-before">Contact for availability</span>
+    <span class="verified-listing-container">
+            <button id="VerifiedListing-1431934" class="btn available-today verified-listing rcils-icon-before rcils-icon-verified-before" verified-listing-message="This listing is provided by &lt;b&gt;Avenue5 Residential, LLC&lt;/b&gt;, a reputable property management company with verified listings on RentCafe.">Verified</button>
+    </span>
+</div>
+
+<ul class="listing-beds" data-beds-range="1-3 Beds">
+            <li class="data-beds">1 BED</li>
+            <li class="data-beds">2 BEDS</li>
+            <li class="data-beds">3 BEDS</li>
+
+</ul>
+
+    <ul class="listing-beds-rent" data-price-range="$1,982 - $11,226">
+            <li class="data-rent ">$1,950&#x2B;</li>
+            <li class="data-rent ">$2,539&#x2B;</li>
+            <li class="data-rent data-rent-ask">Ask for pricing</li>
+    </ul>
+<div class="listing-action-bar">
+    <button class="btn ole btn-primary btn-listing-action btn-listing-action-details market-trends-hide home-page-hide" arial-label="Apply">
+        <span class="fa-icon icon-pencil" aria-hidden="true"></span> View Details
+    </button>
+    <a class="btn ole btn-primary btn-listing-action btn-listing-action-details search-page-hide map-hide home-page-hide" href="https://www.rentcafe.com/apartments/wa/bellevue/the-ridgedale0/default.aspx" arial-label="Apply">
+        <span class="fa-icon icon-pencil" aria-hidden="true"></span> View Property
+    </a>
+        <button id="search-list-1431934" class="btn contact btn-primary green transparent btn-listing-action market-trends-hide home-page-hide" aria-label="Contact" data-target="#contact-us-modal" onclick="RCILS.contactProp.show(this, '1431934','The Ridgedale')">
+            Contact <span class="optional">Property</span>
+        </button>
+</div>
+<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+    <meta itemprop="latitude" content="47.6040" />
+    <meta itemprop="longitude" content="-122.1513" />
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<div class="view-all-button-container">
+    <a href="https://www.rentcafe.com/apartments-for-rent/us/wa/bellevue/" class="view-all btn-primary blue">View All Apartments</a>
+</div>
+        </section>
+    <div class="container-fluid">
+        <div class="home-section-content verified-listings">
+            <h2 class="home-section-header">100% Verified Listings</h2>
+            <p><span>Apartment listings directly from top property managers, pricing and availability updated daily, and your information</br></p>
+        </div>
+    </div>
+</section>
+<section class="home-section-main-items">
+    <section class="home-section-top-banners">
+        
+<div class="home-section-top-banners-content rent-calculator dom-adapt" data-target="RentCalculator" >
+    <div class="background-images-lazy lazy">
+        <h2>Figure Out Your<br/> Rent Budget</h2>
+            <a class="btn btn-primary"
+               href="https://www.rentcafe.com/rent-affordability-calculator/">
+                <span>Rent Calculator</span>
+            </a>
+    </div>
+</div>
+
+        
+<div class="home-section-top-banners-content apartments-near-me " >
+    <div class="background-images-lazy lazy">
+        <h2>Discover places for rent<br/> Near You</h2>
+        <a class="btn btn-primary"
+           href="https://www.rentcafe.com/apartments-for-rent-near-me/">
+            <span>Rental Properties Near Me</span>
+        </a>
+    </div>
+</div>
+
+        
+<div class="home-section-top-banners-content storage-units-near-me dom-adapt" data-target="StorageUnitsNearMe">
+    <div class="background-images-lazy lazy">
+        <h2>Find Store spaces<br/> Near You</h2>
+        <a class="btn btn-primary"
+           href="https://www.rentcafe.com/self-storage-near-me/">
+            <span>Store spaces Near Me</span>
+        </a>
+    </div>
+</div>
+
+    </section>
+
+
+    <section class="home-section home-section-top-cities" id="home-section-top-cities">
+        <div class="container-fluid">
+            <div class="carousel slide carousel-top-cities" id="top-cities" data-preload="false" data-items="2" data-interval="false" data-window-based="true">
+
+                <a class="carousel-control left display-none" href="javascript:void(0);" data-target="#top-cities" data-slide="prev">
+                    <i class="fa-icon icon-chevron-left"></i>
+                </a>
+                <a class="carousel-control right" href="javascript:void(0);" data-target="#top-cities" data-slide="next">
+                    <i class="fa-icon icon-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-section home-section-directory directory-type">
+        <div class="container-fluid">
+            <h2 class="home-section-header">Get an Apartment that Suits You</h2>
+            <div class="carousel carousel-directory-type slide" id="carousel-directory-type" data-items="2" data-interval="false" data-window-based="true">
+                <div id="containerDirectoryType" class="carousel-inner">
+
+<div class="item active property-details container-image" data-custom-width="100" data-use-3d="true">
+    <div class="item-even even-0">
+        <span class="background-images-lazy lazy loaded dir-type dir-pet-friendly-apartments"></span>
+        <a href="https://www.rentcafe.com/sitemaps/pet-friendly-apartments/">Pet Friendly Apartments</a>
+    </div>
+</div>
+<div class="item active property-details container-image" data-custom-width="100" data-use-3d="true">
+    <div class="item-odd odd-1">
+        <span class="background-images-lazy lazy loaded dir-type dir-cheap-apartments"></span>
+        <a href="https://www.rentcafe.com/sitemaps/cheap-apartments/">Cheap Apartments</a>
+    </div>
+</div>
+<div class="item active property-details container-image" data-custom-width="100" data-use-3d="true">
+    <div class="item-even even-2">
+        <span class="background-images-lazy lazy loaded dir-type dir-luxury-apartments"></span>
+        <a href="https://www.rentcafe.com/sitemaps/luxury-apartments/">Luxury Apartments</a>
+    </div>
+</div>
+<div class="item active property-details container-image" data-custom-width="100" data-use-3d="true">
+    <div class="item-odd odd-3">
+        <span class="background-images-lazy lazy loaded dir-type dir-houses"></span>
+        <a href="https://www.rentcafe.com/sitemaps/houses-for-rent/">Houses</a>
+    </div>
+</div>
+<div class="item active property-details container-image" data-custom-width="100" data-use-3d="true">
+    <div class="item-even even-4">
+        <span class="background-images-lazy lazy loaded dir-type dir-studio-apartments"></span>
+        <a href="https://www.rentcafe.com/sitemaps/studio-apartments-for-rent/">Studio Apartments</a>
+    </div>
+</div>
+<div class="item active property-details container-image" data-custom-width="100" data-use-3d="true">
+    <div class="item-odd odd-5">
+        <span class="background-images-lazy lazy loaded dir-type dir-1-bedroom-apartments"></span>
+        <a href="https://www.rentcafe.com/sitemaps/1-bedroom-apartments-for-rent/">1 Bedroom Apartments</a>
+    </div>
+</div>
+<div class="item active property-details container-image" data-custom-width="100" data-use-3d="true">
+    <div class="item-even even-6">
+        <span class="background-images-lazy lazy loaded dir-type dir-2-bedroom-apartments"></span>
+        <a href="https://www.rentcafe.com/sitemaps/2-bedroom-apartments-for-rent/">2 Bedroom Apartments</a>
+    </div>
+</div>
+<div class="item active property-details container-image" data-custom-width="100" data-use-3d="true">
+    <div class="item-odd odd-7">
+        <span class="background-images-lazy lazy loaded dir-type dir-3-bedroom-apartments"></span>
+        <a href="https://www.rentcafe.com/sitemaps/3-bedroom-apartments-for-rent/">3 Bedroom Apartments</a>
+    </div>
+</div>                </div>
+                <a class="carousel-control left display-none" href="javascript:void(0);" data-target="#carousel-directory-type" data-slide="prev">
+                    <i class="fa-icon icon-chevron-left"></i>
+                </a>
+                <a class="carousel-control right" href="javascript:void(0);" data-target="#carousel-directory-type" data-slide="next">
+                    <i class="fa-icon icon-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-section home-section-intro">
+        <div class="container-fluid">
+
+            <div class=" home-section-content home-section-content-toggle find-apartments active" id="home-section-find-apartments">
+                <h2 class="home-section-header"><span class="get-apartment-steps">1</span>Find Apartments for Rent</h2>
+                <p>Featuring hundreds of thousands of apartments and houses for rent, RentCafe.com makes it easy for you to find your perfect home. Check prices, see photo displays, floor plans, amenities, and more!</p>
+            </div>
+            <div class="home-section-content home-section-content-toggle secure-leases" id="home-section-secure-leases">
+                <h2 class="home-section-header"><span class="get-apartment-steps">2</span>Secure Leases</h2>
+                <p>Secure your lease quickly and hassle-free, online or in-person. With RentCafe.com, you can check real-time availability, contact properties, submit rental applications, and receive approval notifications.</p>
+            </div>
+            <div class="home-section-content home-section-content-toggle rest-easy" id="home-section-rest-easy">
+                <h2 class="home-section-header"><span class="get-apartment-steps">3</span>Rest Easy</h2>
+                <p>It’s good to be home! On RentCafe.com you can make secure rent payments, view balances, submit maintenance requests, get community news, and renew your lease — all under one roof.</p>
+            </div>
+            <div class="container-toggle-section-intro">
+                <span class="active toggle-section-intro" for="home-section-find-apartments"></span>
+                <span class="toggle-section-intro" for="home-section-secure-leases"></span>
+                <span class="toggle-section-intro" for="home-section-rest-easy"></span>
+            </div>
+        </div>
+        <div class="dom-adapt mobile_control " data-source="RentCalculator"></div>
+    </section>
+</section>
+<section class="home-section home-section-apps">
+    <div class="container-fluid">
+        <h2 class="home-section-header">Get the Rental You Want - Fast and Free!</h2>
+        <div class="home-section-content">
+            <div class="app-section-content">
+                <p>On the move? The RentCafe.com app helps you find your next great apartment quickly. Anytime. Anywhere.</p></br>
+                <p> Download the RentCafe.com apartment search app now from iTunes and Google Play and get instant access to rental listings nearby or across the US.</p>
+                <a href="https://itunes.apple.com/us/app/apartment-search-by-rentcafe/id425728801?mt=8" target="_blank" class="download-app download-app-itunes">iTunes</a>
+                <a href="https://play.google.com/store/apps/details?id=com.yardi.systems.rentcafe.prospect" target="_blank" class="download-app download-app-googleplay">Google Play</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home-section home-section-details">
+    <div class="container-fluid">
+        <div class="home-section-content">
+            <h2>RentCafe for Residents</h2>
+            <p class="subtitle">You're home! Enjoy 24/7 resident services</p>
+            <p>
+                RentCafe.com helps you save time and manage your new rental effortlessly, from anywhere. Log into your <a class="link-text" href="https://www.rentcafe.com/residentservices/apartmentsforrent/userlogin.aspx" target="_blank">Resident Portal</a>, make and keep track of rent payments, maintenance requests, and lease renewals.</br></br> Have your apartment information and services at the tip of your fingers.</br></br> Download the free RentCafe.com Resident App, available now on <a class="link-text" href="https://itunes.apple.com/us/app/rentcafe-resident/id541403633?ls=1&mt=8" target="_blank">iTunes</a> and <a class="link-text" href="https://play.google.com/store/apps/details?id=com.yardi.systems.rentcafe.resident" target="_blank">Google Play</a>.
+            </p>
+            <a class="btn btn-primary green transparent" href="https://www.rentcafe.com/residentservices/apartmentsforrent/userlogin.aspx" target="_blank" class="login"><span>Resident Login</span></a>
+
+        </div>
+        <div class="home-section-content">
+            <h2>RentCafe for Property Managers</h2>
+            <p class="subtitle">List on RentCafe.com and connect with your residents</p>
+            <p>
+                Gain increased exposure, more leads, and better chances to fill vacancies with qualified residents!</br></br> Generate higher resident retention and satisfaction with online rental applications, approvals, and lease renewals, while making your residents’ life easier.</br></br> With RentCafe.com fully integrated with <a class="link-text" href="http://www.yardi.com/solutions/yardi-voyager-residential" target="_blank">Yardi Voyager</a> and <a class="link-text" href="http://www.yardi.com/products/rentcafe-crm/" target="_blank">RentCafeCRM</a>, property management has never been this easy!
+            </p>
+            <a class="btn btn-primary green transparent" href="https://sitemanager.rentcafe.com/sitemanager/login.aspx" target="_blank" class="login"><span>Manager Login</span></a>
+        </div>
+    </div>
+</section>
+
+<section class="home-section home-section-storage" id="home-section-storage">
+    <div class="container-fluid">
+        <h2 class="home-section-header">Find Self-Storage Right Here on RentCafe!</h2>
+    </div>
+    <div class="dom-adapt mobile_control " data-source="StorageUnitsNearMe"></div>
+    <div class="container-fluid">
+        <p>
+            Search and find storage units near you - it's easy as one-two-three!<br />
+            Check out the facilities in your area, decide on the best unit size, compare prices, and then contact the storage provider.<br />
+            With more than 25,000 storage listings across the country, finding your ideal storage unit on RentCafe is a breeze!
+        </p>
+        <div class="carousel slide carousel-top-cities-storage" id="top-cities-storage" data-preload="false" data-items="2" data-interval="false" data-window-based="true">
+            <div class="carousel-inner top-cities-storage">
+
+<div class="item active property-details container-image" data-custom-width="100" data-use-3d="true">
+    <img class="image lazy" title="Atlanta Self-Storage Units for Rent" alt="Atlanta Self-Storage Units for Rent" data-src="https://cdngeneral.rentcafe.com//dmslivecafe/ils/Content/marketing/popular-cities/homepage/atlanta_ga.png">
+    <a href="https://www.rentcafe.com/storage-units/us/ga/atlanta/">ATLANTA <span>SELF-STORAGE</span></a>
+</div>
+
+<div class="item active property-details container-image" data-custom-width="100" data-use-3d="true">
+    <img class="image lazy" title="Miami Self-Storage Units for Rent" alt="Miami Self-Storage Units for Rent" data-src="https://cdngeneral.rentcafe.com//dmslivecafe/ils/Content/marketing/popular-cities/homepage/miami_fl.png">
+    <a href="https://www.rentcafe.com/storage-units/us/fl/miami/">MIAMI <span>SELF-STORAGE</span></a>
+</div>
+
+<div class="item active property-details container-image" data-custom-width="100" data-use-3d="true">
+    <img class="image lazy" title="Phoenix Self-Storage Units for Rent" alt="Phoenix Self-Storage Units for Rent" data-src="https://cdngeneral.rentcafe.com//dmslivecafe/ils/Content/marketing/popular-cities/homepage/phoenix_az.png">
+    <a href="https://www.rentcafe.com/storage-units/us/az/phoenix/">PHOENIX <span>SELF-STORAGE</span></a>
+</div>
+
+            </div>
+            <a class="carousel-control left display-none" href="javascript:void(0);" data-target="#top-cities-storage" data-slide="prev">
+                <i class="fa-icon icon-chevron-left"></i>
+            </a>
+            <a class="carousel-control right" href="javascript:void(0);" data-target="#top-cities-storage" data-slide="next">
+                <i class="fa-icon icon-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+    
+
+<footer id="footer">
+    <div class="footer-inner container-fluid">
+        <div class="footer-links">
+            <div class="general-links">
+            <a href="https://www.rentcafe.com/canada/" class="home-rentcafe-canada" aria-label="RentCafe Canada Logo - Home">RentCafe Canada</a>
+                <div class="general-links-child">
+                    <span>Follow us</span>
+                    <a target="_blank" title="RentCafe Facebook" class="home-facebook" href="https://www.facebook.com/Rentcafecom/" aria-label="RentCafe Facebook link">Facebook</a>
+                    <a target="_blank" title="RentCafe Instagram" class="home-instagram" href="https://www.instagram.com/rentcafecom/" aria-label="RentCafe Instagram link">Instagram</a>
+                    <a target="_blank" title="RentCafe Twitter" class="home-twitter" href="https://twitter.com/RENTCafeCom" aria-label="RentCafe Twitter link">Twitter</a>
+                    <a target="_blank" title="RentCafe Pinterest" class="home-pinterest" href="https://www.pinterest.com/rentcafecom/" aria-label="RentCafe Pinterest link">Pinterest</a>
+                </div>
+            </div>
+            <!--<div class="footer-site-quick-links">-->
+            <ul class="site-links">
+                <li>Get to know us</li>
+                <li><a target="_blank" href="https://www.rentcafe.com/apartmentsforrent/homeaboutus.aspx">About Us</a></li>
+                <li><a target="_blank" href="https://www.rentcafe.com/apartmentsforrent/homeformanagers.aspx">List with RentCafe.com</a></li>
+                <li><a target="_blank" href="https://www.rentcafe.com/canada/">RentCafe.com Canada</a></li>
+                <li><a href="https://resources.yardi.com/legal/rentcafe-privacy-policy/" target="_blank">Privacy Policy</a></li>
+                <li><a href="https://resources.yardi.com/legal/rentcafe-terms-of-service/" target="_blank">Terms</a></li>
+                <li><a href="https://resources.yardi.com/legal/accessibility-policy/" target="_blank">Accessibility Statement</a></li>
+            </ul>
+            <ul class="quick-links">
+                <li>Quick links</li>
+                <li><a target="_blank" href="https://www.rentcafe.com/apartmentsforrent/homefaq.aspx">FAQ</a></li>
+                <li><a target="_blank" href="https://www.rentcafe.com/apartmentsforrent/homecontactus.aspx">Contact us</a></li>
+                <li><a target="_blank" href="https://www.rentcafe.com/sitemaps/">Sitemaps</a></li>
+                <li><a target="_blank" href="https://www.rentcafe.com/blog/">Blog</a></li>
+            </ul>
+            <ul class="yardi-links">
+                <li>Yardi Companies & Affiliates</li>
+                <li><a target="_blank" href="https://www.yardi.com">Yardi Systems</a></li>
+                <li><a target="_blank" href="https://www.yardimatrix.com">Yardi Matrix</a></li>
+                <li><a target="_blank" href="https://www.yardikube.com">Yardi Kube</a></li>
+                <li><a target="_blank" href="https://www.yardibreeze.com">Yardi Breeze</a></li>
+                <li><a target="_blank" href="https://www.yardicorom.com">Yardi Corom</a></li>
+                <li><a target="_blank" href="https://www.storagecafe.com">StorageCafe</a></li>
+                <li><a target="_blank" href="https://www.commercialcafe.com">CommercialCafe</a></li>
+                <li><a target="_blank" href="https://www.commercialsearch.com">CommercialSearch</a></li>
+                <li><a target="_blank" href="https://www.point2homes.com">Point2</a></li>
+                <li><a target="_blank" href="https://www.propertyshark.com/mason/">PropertyShark</a></li>
+                <li><a target="_blank" href="https://www.commercialedge.com">CommercialEdge</a></li>
+                <li><a target="_blank" href="https://www.multihousingnews.com">MultiHousing News</a></li>
+                <li><a target="_blank" href="https://www.commercialsearch.com/news/">Commercial Property Executive</a></li>
+                <li><a target="_blank" href="https://42floors.com">42Floors</a></li>
+            </ul>
+        </div>
+        <hr />
+        <div class="copyright">
+            <img align="bottom" alt="equal housing opportunity" height="12" src="https://cdngeneral.rentcafe.com/Content/images/ech_logo.png" title="equal housing opportunity" width="20" /> &copy; 2022 - Yardi Systems Inc. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+    <script>RCILS = window.RCILS || {};RCILS.GCKV2 = '6Led3AcTAAAAAMU9N0MWjGzH1EM2ewS_DHHVol3p';RCILS.GCKV3 = '6LfbEcYUAAAAABrDL5Aq0u6g4uW6vHkJBeY2DAp3';</script>
+    <script  src='https://cdngeneral.rentcafe.com/Content/js/home/home-e5594d360c.min.js' defer></script>
+    
+    <script type="text/javascript">
+        RCILS = window.RCILS || {};
+        RCILS.settings = {
+            homeUrl: "/",
+            countryCode: "US",
+            parentGeoId: "0"
+        };
+
+    </script>
+
+
+<script>var ClickTrackSpace=ClickTrackSpace||{};ClickTrackSpace={Init:function(e,c,r){"undefined"!=typeof ClickTrack&&(ClickTrack.SiteSection="RentCafeILS",ClickTrack._PageDisplayName=e,ClickTrack._ULI=r,ClickTrack._CCDisplayName="",ClickTrack._Property="",ClickTrack.init(),ClickTrackSpace.TrackProperties(c),ClickTrackSpace.EnablePropertyWebsite(),ClickTrackSpace.SetNavbarTracking())},TrackProperties:function(e){if("undefined"!=typeof ClickTrack&&e&&e.length>0)for(var c=0;c<e.length;c++)ClickTrack._trackEvent("ILS","SearchResultsImpression",{ce_propertyId:e[c]})},TrackContact:function(e){"undefined"!=typeof ClickTrack&&ClickTrack._trackEvent("ILS","Contact Us",{ce_propertyId:e})},TrackContactSubmit:function(e){"undefined"!=typeof ClickTrack&&ClickTrack._trackEvent("ILS","Contact Us Submitted",{ce_propertyId:e})},TrackFlyout:function(e){"undefined"!=typeof ClickTrack&&ClickTrack._trackEvent("ILS","Property Detail",{ce_propertyId:e})},TrackCall:function(e){"undefined"!=typeof ClickTrack&&ClickTrack._trackEvent("ILS","Click To Call",{ce_propertyId:e})},TrackSearchResponseResult:function(e){ClickTrackSpace.Init(e.ClickTrackInfo.PageDisplayName,void 0,e.ClickTrackInfo.ULI);var c=new Array;if(e.Rentals&&e.Rentals.length>0)for(var r=0;r<e.Rentals.length;r++)c=c.concat(ClickTrackSpace._extractPropertiesIds(e.Rentals[r]));ClickTrackSpace.TrackProperties(c)},ResetTrackPage:function(){"undefined"!=typeof ClickTrack&&(ClickTrack._yTrackPage=null)},SetVisitWebsiteQuerystring:function(){if("undefined"!=typeof ClickTrack){const c=document.querySelectorAll(".visitSiteLink");for(let r=0,t=c.length;r<t;r++){var e=c[r].getAttribute("href");void 0!==e&&void 0!==ClickTrack.getCookie("_yTrackUser")&&null!=ClickTrack.getCookie("_yTrackUser")&&(e=e.replace("_ytrackuser=null&_ytrackvisit=null","").replace("_ytrackuser=&_ytrackvisit=",""),c[r].setAttribute("href",ClickTrack.GetTrackingCrossDomainURLParams(e)))}}},EnablePropertyWebsite:function(){"undefined"!=typeof ClickTrack&&setTimeout((function(){const e=document.querySelectorAll(".AddClickTrackParams");for(let c=0,r=e.length;c<r;c++)e[c].classList.contains("ShowOnClickTrackParams")&&(e[c].style.display="",ClickTrackSpace.SetVisitWebsiteQuerystring())}),3e3)},SetNavbarTracking:function(){"undefined"!=typeof ClickTrack&&setTimeout((function(){const e=document.querySelectorAll("#login-links .nav-link");for(let r=0,t=e.length;r<t;r++){var c=e[r].getAttribute("href");void 0!==c&&void 0!==ClickTrack.getCookie("_yTrackUser")&&null!=ClickTrack.getCookie("_yTrackUser")&&(c=c.replace("_ytrackuser=null&_ytrackvisit=null","").replace("_ytrackuser=&_ytrackvisit=",""),e[r].setAttribute("href",ClickTrack.GetTrackingCrossDomainURLParams(c)))}}),3e3)},_extractPropertiesIds:function(e){var c=new Array;if(e&&e.Rentals&&e.Rentals.length>0)for(var r=0;r<e.Rentals.length;r++)c.push(e.Rentals[r].PropertyId);return c}};</script>    <script src="https://t.rentcafe.com/rctv1.4.min.js" type="text/javascript" onload="ClickTrackSpace.Init('SG9tZSMxNzg2MTE5NjAx-S6%2buhYSeBz4%3d', [], '')"></script>
+
+<script>
+    psrk = window.psrk || {};
+    if (false) {
+        psrk.url = {
+            base: 'http://www.propertyshark.com',
+            webservice: 'http://www.propertyshark.com',
+            cdn: "//cdnst.sharketyprop.com",
+            cdn_search: "https://www.rentcafe.com",
+            cdn_endpoint_url: "https://cdn.sharketyprop.com/webservices/?v=1&amp;amp;modules=gmap,geopicker&amp;amp;app=rentcafe",
+            google_maps_endpoint_url: "https://maps.googleapis.com/maps/api/js?key=AIzaSyATPc_RsPgbbap-3tGh2hy5w3mgYfkgY2w&amp;amp;channel=rentcafe-ils-standard&amp;sensor=false&amp;v=3",
+            maps_bundle_endpoint_url: "/Content/js/gmap.js"
+        }
+    } else {
+        psrk.url = {
+            base: 'http://www.propertyshark.com',
+            webservice: 'http://www.propertyshark.com',
+            cdn: "//cdn.sharketyprop.com",
+            cdn_search: "https://www.rentcafe.com",
+            cdn_endpoint_url: "https://cdn.sharketyprop.com/webservices/?v=1&amp;amp;modules=gmap,geopicker&amp;amp;app=rentcafe",
+            google_maps_endpoint_url: "https://maps.googleapis.com/maps/api/js?key=AIzaSyATPc_RsPgbbap-3tGh2hy5w3mgYfkgY2w&amp;amp;channel=rentcafe-ils-standard&amp;sensor=false&amp;v=3",
+            maps_bundle_endpoint_url: "/Content/js/gmap.js"
+        };
+    }
+</script>
+
+    
+</body>
+</html>
