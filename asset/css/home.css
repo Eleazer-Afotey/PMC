@@ -1,0 +1,35 @@
+.home-hero {
+    background-image: url(../images/home-hero.jpg);
+    background-color: #00609c;
+    background-attachment: scroll;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.home-hero {
+            background-image: url("../images/home-hero.jpg");
+        }
+
+        @media (min-width: 481px) {
+            .home-hero {
+                background-image: url("../images/home-hero.jpg");
+            }
+        }
+
+        @media (min-width: 801px) {
+            .home-hero {
+                background-image: url("../images/home-hero.jpg");
+            }
+        }
+        @media (min-width: 1200px) {
+            .home-hero {
+                background-image: url("../images/home-hero.jpg");
+            }
+        }
